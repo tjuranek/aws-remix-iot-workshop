@@ -1,0 +1,21 @@
+h2 {
+  font-size: 2.5rem;
+  padding-bottom: 0.5rem;
+}
+
+p {
+  padding-bottom: 1rem;
+}
+
+br {
+  padding: 0.25rem 0;
+}
+
+h3 {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+em {
+  font-weight: bold;
+}

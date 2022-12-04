@@ -1,0 +1,115 @@
+---
+title: Data Fetching
+---
+
+import { CodeBlock, dracula } from 'react-code-blocks';
+
+## Data Fetching
+
+In most web applications we have a database or API we need to retrieve data
+from. We're using React - we'll probably use `Redux` or `React-Query` to fetch
+this data, right?
+
+Wrong. Remix has **amazing** ways to load data based on the route you're on and
+render that into your page on the server. Let's check it out.
+
+<br />
+
+### Loaders
+
+The route modules we defined in the last section are capable of more than just
+default exports of the JSX you want to render. We can also export a `loader`.
+It's a named export that gets called before the JSX is rendered on the server.
+
+We can query data in these loaders and return the data back to the component as
+JSON. We're able to acess that data with the `useLoaderData()` hook. Let's look
+at a couple examples:
+
+<CodeBlock
+  text={`
+export async function loader() {
+  const authors = await getAuthorsFromDb();
+  return json({ authors });
+}
+
+`} language="TypeScript" showLineNumbers={false} theme={dracula} />
+
+<br />
+
+Above is a basic loader that retrieves the authors from the database. This
+happens on the server. The response is an OK response with a json body that
+contains the authors.
+
+Let's look at a little bit of a more complex example:
+
+<CodeBlock
+  text={`
+export async function loader(params) {
+  const { authorId, bookId } = params;
+  const author = getAuthor(authorId);
+  const book = getBook(bookId);
+  return json({ author, book });
+}
+
+`} language="TypeScript" showLineNumbers={false} theme={dracula} />
+
+<br />
+
+This gets the `$authorId` and `$bookId` from the path and uses them to fetch
+data. We then return both items. What if we wanted to display that data though?
+That's where the `useLoaderData()` hook comes in!
+
+<CodeBlock
+  text={`
+export async function loader(params) {
+  const { authorId, bookId } = params;
+  const author = getAuthor(authorId);
+  const book = getBook(bookId);
+  return json({ author, book });
+}
+
+export default function MyRoute(params) {
+  const { author, book } = useLoaderData();
+  return (); // return JSX to render data
+}
+
+`} language="TypeScript" showLineNumbers={false} theme={dracula} />
+
+<br />
+
+Isn't this awesome? Remix provided an opinionated way to load data into
+components at specific routes. It's as easy as defining a function and then
+using a hook to access the retrieved data.
+
+### Loaders vs Redux
+
+I really want to drive this home. In present-day development we're so used to
+using big tools like Redux to get and manage application state. Let's go over a
+flow chart of what just happened.
+
+!['flow chart'](https://cdn.discordapp.com/attachments/364530689695154177/1048262781176127508/image.png)
+
+With Redux, a user interaction causes a dispatch in Remix which initiates a
+fetch request. The API and database get that data back to the Redux reducer,
+which updates the store and then re-renders the application.
+
+Remix is much more serial. We hit the server, which loads the data from the API,
+and then re-renders the application. It's a really simple mental model. Think
+for a bit about how much less code was written and needs to be tested compared
+to a Redux store, dispatch, and reducer! 🤯
+
+### Reviewing the Network Waterfall
+
+Beyond code complexity, Remix provides another awesome advantage to other ways
+of loading data. Because we use nested routing in Remix we know exactly what
+needs loaded just based off the URL. If I go to `/authors/001/books/002`, Remix
+will look at all of the loaders in those routes all at once and initiate those
+fetches. If you compare this to other methods where the data fetch is
+initialized when the component renders in the application, it's much faster.
+Here's a graph:
+
+!['flow chart'](https://imgur.com/i2ft5RB.png)
+
+Notice that with Remix, all the requests cause by the loaders are initialized at
+once. Without Remix we have to wait for one request to come back before we know
+what other requests need to happen.

@@ -1,0 +1,118 @@
+---
+title: 'What is a PEPSA?'
+---
+
+## What is a PESPA?
+
+PESPA stands for **Progressively Enhanced Single Page Application**. Remix is a
+paving the way for PESPAs as it's focused on the fundamentals of the web while
+still maintaining a modern user experience. To really understand what that means
+we need to go back through a few prior iterations of web architecture.
+
+<br />
+
+### Multi-Page Apps (MPAs)
+
+In earlier days, applications were written for the server. The users browser was
+responsible for submitting requests to retrieve and mutate that data.
+
+!['mpa diagram'](https://res.cloudinary.com/epic-web/image/upload/v1665491189/epicweb.dev/blog/The%20Web%E2%80%99s%20Next%20Transition/mpa.svg)
+
+Getting documents was simple. The user entered a URL and the server determined
+what HTML needs sent as a response. The browser gave a pending state, typically
+through the favicon, and then rendered returned HTML.
+
+Posting data was really only done one way. A user would submit a form and the
+browser would send that serialized form data to the server. The server would
+mutate the data and return a redirect so the browser follow the above process to
+get the updated data.
+
+**MPA Pros:**
+
+- The mental model behind MPAs is really simple.
+- State is handled by cookies sent over requests.
+
+<br />
+
+**MPA Cons:**
+
+- Full page refreshes limit or make good UX difficult.
+- It's impractical, image a full refresh every time a tweet gets liked.
+
+<br />
+
+### Single Page Apps (SPAs)
+
+Skipping a couple trends between MPAs and SPAs, Single Page Apps moved much of
+the code from the server to the client. This let us create awesome user
+experiences by running much of our application in client side JavaScript.
+
+!['spa diagram'](https://res.cloudinary.com/epic-web/image/upload/v1665491194/epicweb.dev/blog/The%20Web%E2%80%99s%20Next%20Transition/spa.svg)
+
+Getting documents was much different than MPAs. The user would get a static file
+that loads JavaScript to handle routing, data fetching, and rendering. The
+server was only responsible for persisted data.
+
+Mutations happened when a user submitted form that changed the client data
+state. Actions submitted to a server would come back with new data cause client
+re-renders.
+
+**SPA Pros:**
+
+- Much more control of the clients browser
+- Powerful capabilities to build great user experiences
+
+<br />
+
+**SPA Cons:**
+
+- State management took up lots, maybe even most, of the code we wrote.
+- Keeping state up to date and dealing with client/server interaction was the
+  primary complexity in most SPAs.
+- We wrote our own form handling with prevent default and fetch.
+- Code was duplicated a lot between the client and server.
+
+<br />
+
+### Introducing PESPAs
+
+Historically we've seen that MPAs have a simple mental model and SPAs have more
+powerful capabilities. If only there was a way to have the simplicity of MPAs
+with the capabilities of SPAs.
+
+That's what a Progressively Enhanced Single Page App is. Progressive enhancment
+means we have a functional application even without Javascript, but more
+importantly a simpler structure to our application. Even with progressive
+enhancement, we stick to browser basics and smartly revalidate data in a way
+that doesn't require a full page reload and keeps great UX a top priority.
+
+!['pespa diagram'](https://res.cloudinary.com/epic-web/image/upload/v1665493076/epicweb.dev/blog/The%20Web%E2%80%99s%20Next%20Transition/pespa.svg)
+
+Getting data is a breeze, the initial HTML is server rendered and JavaScript is
+loaded to enhance the experience for user interactions.
+
+Mutations happen through form and routing logic calls corresponding actions on
+the server. After a action occurs, the router knows to revalidate data for the
+current UI or redirect to a new page.
+
+**PESPA Pros:**
+
+- Functionality is the baseline
+- JavaScript is for enhancemnt, not enablement.
+- Lazy loading and smart pre-fetching is made easy.
+- Code stays on the server.
+- Using the platform is the default. The browser can do a lot!
+
+<br />
+
+**PESPA Cons:**
+
+- Rendering on the server comes with its own set of challenges compared to
+  client side rendering.
+- Only a few frameworks support PESPAs at the time of this workshop.
+- We haven't figured out everything yet, especially for more edge case
+  scenarios.
+
+<br />
+
+Remix is an amazing framework for making PESPAs. Let's learn why and dive in!

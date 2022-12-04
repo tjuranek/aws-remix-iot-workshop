@@ -1,0 +1,69 @@
+---
+title: Prerequisites
+---
+
+import { CodeBlock, dracula } from 'react-code-blocks';
+
+## Prerequisites
+
+I'm excited you're taking this workshop! A couple of knowledge and system setup
+items are required in order to effectively follow along.
+
+<br />
+
+### Getting the most out of this course
+
+This workshop is _not_ intended for absolute beginners to web development. If
+you haven't written JavaScript before it will be difficult to follow along.
+
+We're going to be using TypeScript, React, and NodeJS pretty heavily. By no
+means do you need to be an expert, but it's assumed you have experience. A solid
+understanding of JavaScript, CSS, and prior experience building web applications
+should be a given.
+
+<br />
+
+### Dependencies
+
+A couple of depenencies are needed in order to clone the project, follow along
+with workshops, and build things locally.
+
+- Git: How code is pulled down and changed between modules.
+- NodeJS (v16+): How the JavaScript is ran on your local machine.
+- NPM: How we use external packages/dependencies, like Remix.
+
+<br />
+
+### Setup the repository
+
+First things first, clone our repository code. This has lots in it right now,
+but we'll switch branches through the course and build incrementally.
+
+<CodeBlock
+  text="git clone https://github.com/tjuranek/aws-remix-iot-workshop.git"
+  language="TypeScript"
+  showLineNumbers={false}
+  theme={dracula}
+/>
+
+<br />
+
+Next, we need to install our package dependencies.
+
+<CodeBlock
+  text="npm install"
+  language="TypeScript"
+  showLineNumbers={false}
+  theme={dracula}
+/>
+
+<br />
+
+Lastly, lets make sure everything is working and our dev server can start.
+
+<CodeBlock
+  text="npm run dev"
+  language="TypeScript"
+  showLineNumbers={false}
+  theme={dracula}
+/>

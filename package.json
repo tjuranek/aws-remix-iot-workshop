@@ -1,6 +1,7 @@
 {
   "name": "aws-remix-iot-workshop",
   "workspaces": [
+    "exercise/data-loading",
     "exercies/routing",
     "packages/printster-app",
     "packages/printster-asset-data",

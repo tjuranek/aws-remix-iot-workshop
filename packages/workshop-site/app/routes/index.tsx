@@ -5,6 +5,7 @@ import RemixIcon from '../assets/remix-icon.svg';
 import NodejsIcon from '../assets/nodejs-icon.svg';
 import Instructor from '../assets/instructor.jpeg';
 import styles from '../styles/routes/index.css';
+import { Link } from 'react-router-dom';
 
 export const meta: MetaFunction = () => {
   return {
@@ -28,9 +29,12 @@ export default function Index() {
         <img height={200} width={300} src={AwsLogo} alt="AWS Logo" />
 
         <div className="hero-text">
-          <h1>Building with Remix and Iot-App-Kit</h1>
+          <h1>Intro to Remix</h1>
 
-          <p>Learn to create modern IoT applications backed by AWS.</p>
+          <p>
+            Learn how to build progressively enhanced web applications with the
+            Remix framework.
+          </p>
         </div>
 
         <div className="hero-instructor">
@@ -58,7 +62,7 @@ export default function Index() {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="var(--color-background)"
-            fill-opacity="1"
+            fillOpacity="1"
             d="M0,0L34.3,32C68.6,64,137,128,206,149.3C274.3,171,343,149,411,128C480,107,549,85,617,74.7C685.7,64,754,64,823,58.7C891.4,53,960,43,1029,53.3C1097.1,64,1166,96,1234,96C1302.9,96,1371,64,1406,48L1440,32L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
           ></path>
         </svg>
@@ -94,52 +98,42 @@ export default function Index() {
         <hr />
 
         <p>
-          We'll explore the core concepts of Remix while building a full-stack
-          IIoT application with AWS Iot-App-Kit.
+          We'll explore the core concepts of Remix and build a foundation to
+          empower us to develop high quality full stack applications.
         </p>
       </div>
 
       <div className="learning-objectives centered-column">
-        <h2>🦄 What Will I Learn?</h2>
-
-        <p>
-          This workshop has two main learning objectives. The first section will
-          focus on the fundamentals of Remix and building modern full-stack web
-          apps with it. The second part will demonstrate how easy it is to
-          create custom IIoT applications with AWS. Here's a quick summary:
-        </p>
+        <h2>What Will I Learn?</h2>
 
         <ul>
-          <li>❓ Learn the what and why behind Remix</li>
-          <li>🧱 Get an overview of Remix Stacks</li>
-          <li>🎓 Experience the fundamentals of Remix that make it great</li>
+          <li>❓ Learn what a 'PESPA' is an how Remix is one</li>
+          <li>🧱 Get an overview of the Remix CLI and Remix Stacks</li>
+          <li>✅ Create your first Remix routes with nested layouts</li>
+          <li>💽 Bring data into your application with Remix Loaders</li>
+          <li>🖊 Mutate persisted data with Remix Actions</li>
           <li>
             📹 Get quick demos of the more powerful advanced Remix features
           </li>
-          <li>🧪 Setup a performant testing suite with Jest and Playwright</li>
-          <li>🏔 Create a basic IIoT app infrastructure with AWS CDK</li>
-          <li>📠 Make demo models and assets with controllable mock data</li>
-          <li>🌐 Connect our Remix application to the created assets</li>
         </ul>
       </div>
 
       <div className="test-drive centered-column">
-        <h2>🚀 Test Drive</h2>
+        <h2>Test Drive</h2>
 
         <p>Visit the demo application and see what we'll build!</p>
 
         <button>Printster Live Demo</button>
       </div>
 
-      <div className="prereqs centered-column">
-        <h2>🤔 Any Prerequisites?</h2>
-        <div className="panel">
-          <p>
-            This couse is an intermediate level and expects some experience
-            JavaScript - especially with React. Prior experience with Node.js
-            and deploy web applications is additionally beneficial.
-          </p>
-        </div>
+      <div className="get-started centered-column">
+        <h2>Get Started</h2>
+
+        <p>Ready to dive in? Let's do it!</p>
+
+        <Link to="/modules/introduction/prerequisites">
+          <button>Go to Workshop</button>
+        </Link>
       </div>
     </>
   );

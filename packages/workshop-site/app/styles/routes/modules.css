@@ -7,26 +7,21 @@
 .menu {
   align-items: center;
   display: flex;
-  grid-column: span 4;
-  min-height: 8vh;
-}
-
-.menu-link {
-  align-items: center;
-  color: var(--color-text);
-  display: flex;
-  gap: 1rem;
-  margin-left: 2rem;
-}
-
-.menu-icon {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-
-.menu-title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
+  grid-column: span 4;
+  justify-content: center;
+  min-height: 8vh;
+  width: 25%;
+}
+
+.menu > a {
+  color: var(--color-text);
+}
+
+.menu > a:hover {
+  color: var(--color-link);
+  text-decoration: none;
 }
 
 .sidebar {
@@ -36,15 +31,13 @@
   min-height: 92vh;
 }
 
-.sidebar > h3 {
+.sidebar h3 {
+  font-size: 1.75rem;
   margin-top: 2rem;
 }
 
-.sidebar-list {
-  list-style-type: none;
-  list-style-position: none;
-  margin: 0;
-  padding: 0;
+.sidebar ul {
+  margin: 1rem 0;
 }
 
 .sidebar > hr {

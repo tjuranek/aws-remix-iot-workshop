@@ -7,27 +7,17 @@ import {
   Scripts,
   ScrollRestoration
 } from '@remix-run/react';
-import globalStyles from '~/styles/global.css';
-import resetStyles from '~/styles/reset.css';
+import tailwind from './styles/tailwind.css';
+
+export function links() {
+  return [{ rel: 'stylesheet', href: tailwind }];
+}
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
-  title: 'Intro to Remix',
+  title: 'Printster',
   viewport: 'width=device-width,initial-scale=1'
 });
-
-export function links() {
-  return [
-    {
-      rel: 'stylesheet',
-      href: globalStyles
-    },
-    {
-      rel: 'stylesheet',
-      href: resetStyles
-    }
-  ];
-}
 
 export default function App() {
   return (
@@ -36,7 +26,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="h-screen w-screen">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

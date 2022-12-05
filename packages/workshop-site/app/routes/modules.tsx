@@ -38,35 +38,19 @@ const sidebarContent = [
     ]
   },
   {
-    heading: 'Remix Basics',
+    heading: 'PESPAs',
     items: [
       {
-        text: 'What is a PESPA?',
-        link: '/modules/remix-basics/what-is-a-pespa'
+        text: 'Short History of Web Architecture',
+        link: '/modules/pespas/short-history-of-web-architecture'
       },
       {
-        text: 'Why Remix?',
-        link: '/modules/remix-basics/why-remix'
+        text: 'Progressively Enhanced Single Page App',
+        link: '/modules/pespas/progressively-enhanced-single-page-app'
       },
       {
-        text: 'Creating a Project',
-        link: '/modules/remix-basics/creating-a-project'
-      },
-      {
-        text: 'Routing',
-        link: '/modules/remix-basics/routing'
-      },
-      {
-        text: 'Data Fetching',
-        link: '/modules/remix-basics/data-fetching'
-      },
-      {
-        text: 'Data Mutation',
-        link: '/modules/remix-basics/data-mutation'
-      },
-      {
-        text: 'In Review',
-        link: '/modules/remix-basics/in-review'
+        text: 'Where Does Remix Fit?',
+        link: '/modules/pespas/where-does-remix-fit'
       }
     ]
   }

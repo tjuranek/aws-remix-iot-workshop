@@ -1,0 +1,54 @@
+### Introducing PESPAs
+
+Historically we've seen that MPAs have a simple mental model and SPAs have more
+powerful capabilities. If only there was a way to have the simplicity of MPAs
+with the capabilities of SPAs.
+
+That's what a Progressively Enhanced Single Page App is. Progressive enhancment
+means we have a functional application even without Javascript, but more
+importantly a simpler structure to our application. Even with progressive
+enhancement, we stick to browser basics and smartly revalidate data in a way
+that doesn't require a full page reload and keeps great UX a top priority.
+
+!['pespa diagram'](https://res.cloudinary.com/epic-web/image/upload/v1665493076/epicweb.dev/blog/The%20Web%E2%80%99s%20Next%20Transition/pespa.svg)
+
+Getting data is a breeze, the initial HTML is server rendered and JavaScript is
+loaded to enhance the experience for user interactions.
+
+Mutations happen through form and routing logic calls corresponding actions on
+the server. After a action occurs, the router knows to revalidate data for the
+current UI or redirect to a new page.
+
+**PESPA Pros:**
+
+- Functionality is the baseline
+- JavaScript is for enhancemnt, not enablement.
+- Lazy loading and smart pre-fetching is made easy.
+- Code stays on the server.
+- Using the platform is the default. The browser can do a lot!
+
+<br />
+
+**PESPA Cons:**
+
+- Rendering on the server comes with its own set of challenges compared to
+  client side rendering.
+- Only a few frameworks support PESPAs at the time of this workshop.
+- We haven't figured out everything yet, especially for more edge case
+  scenarios.
+
+<br />
+
+Remix is an amazing framework for making PESPAs. Let's learn why and dive in!
+
+import { Link } from '@remix-run/react';
+
+<div className="button-group">
+  <Link to="/modules/pespas/short-history-of-web-architecture">
+    <button>Short History of Web Architecture</button>
+  </Link>
+
+  <Link to="/modules/pespas/where-does-remix-fit">
+    <button>Where Does Remix Fit</button>
+  </Link>
+</div>

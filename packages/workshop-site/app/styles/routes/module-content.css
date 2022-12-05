@@ -19,3 +19,22 @@ h3 {
 em {
   font-weight: bold;
 }
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--color-text);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+}
+
+button:hover {
+  background-color: var(--color-buy-shadow);
+}

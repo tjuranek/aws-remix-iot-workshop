@@ -34,10 +34,6 @@ const sidebarContent = [
       {
         text: 'Scenario',
         link: '/modules/introduction/scenario'
-      },
-      {
-        text: 'Define a Tech Stack',
-        link: '/modules/introduction/define-a-tech-stack'
       }
     ]
   },

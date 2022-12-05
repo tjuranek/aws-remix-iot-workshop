@@ -1,7 +1,3 @@
----
-title: Prerequisites
----
-
 import { CodeBlock, dracula } from 'react-code-blocks';
 
 ## Prerequisites
@@ -25,9 +21,6 @@ should be a given.
 
 ### Dependencies
 
-A couple of depenencies are needed in order to clone the project, follow along
-with workshops, and build things locally.
-
 - Git: How code is pulled down and changed between modules.
 - NodeJS (v16+): How the JavaScript is ran on your local machine.
 - NPM: How we use external packages/dependencies, like Remix.
@@ -36,8 +29,7 @@ with workshops, and build things locally.
 
 ### Setup the repository
 
-First things first, clone our repository code. This has lots in it right now,
-but we'll switch branches through the course and build incrementally.
+First things first, clone our repository code.
 
 <CodeBlock
   text="git clone https://github.com/tjuranek/aws-remix-iot-workshop.git"
@@ -67,3 +59,15 @@ Lastly, lets make sure everything is working and our dev server can start.
   showLineNumbers={false}
   theme={dracula}
 />
+
+import { Link } from '@remix-run/react';
+
+<div className="button-group">
+  <Link to="/modules/introduction/prerequisites">
+    <button>Prerequisites</button>
+  </Link>
+
+  <Link to="/modules/introduction/scenario">
+    <button>Scenario</button>
+  </Link>
+</div>

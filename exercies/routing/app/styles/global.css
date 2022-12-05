@@ -1,0 +1,26 @@
+/* override browser defaults */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* structures a four column grid layout */
+.layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: 100vh;
+}
+
+/* sets a sidebar to take one available fraction */
+.sidebar {
+  background-color: #303030;
+  column-span: 1fr;
+  padding: 1rem;
+}
+
+/* sets a content to take three available fractions */
+.content {
+  column-span: 3fr;
+  padding: 1rem;
+}

@@ -10,6 +10,8 @@ import { CodeBlock, dracula } from 'react-code-blocks';
 Everything starts with your routes: the compiler, the initial request, and
 almost every user interaction afterward." - Remix Docs
 
+<br />
+
 ### Terms
 
 A route is a JavaScript module with some expected exports that corresponds to a
@@ -19,6 +21,30 @@ correlate to the Posts route.
 Nested routing refers to the idea of mapping segments of the URL to a hierarchy
 of route components. The /authors/thomas path would correspond to both the
 Authors route and an Author route.
+
+<br />
+
+### Defining a Route
+
+In Remix, we define a route module by creating a new file under the `app/routes`
+folder. The only requirement is the route must export a default function that
+returns the JSX you'd like to render on that page. As you can imagine, that
+might look really simple:
+
+<CodeBlock
+  text={`
+  export default function SomeFunctionName() {
+    return <p>This text shows up on the page!</p>
+  }
+
+`} showLineNumbers={false} theme={dracula} language="TypeScript" />
+
+<br />
+
+You can treat this function like pretty much any other React component. Import
+other components, use hooks, just always return some markup to render on the
+page. Remix will server render this and return it to the browser any time this
+page is requested.
 
 <br />
 
@@ -78,6 +104,8 @@ longer path using nested routing like this:
 available in that route on the `Request` object, which we'll cover in the next
 section under `Loaders`.
 
+<br />
+
 ### Layouts
 
 It's very common to share layouts between different routes in web applications.
@@ -133,3 +161,25 @@ in that specific section. Here's a basic example:
 Anything that is a nested route below this `/modules` path will get rendered in
 the `<Outlet />`. Right now you're seeing my markdown pages get rendered in the
 `<Outlet />` of my `/modules` nested layout. Pretty cool, right?
+
+### Exercise
+
+Time for our first exercise! Let's create our own routes!
+
+Under the `exercies/routing` folder in the workshop repository you'll find a
+boilerplate Remix application. Under `/app/routing` there is just one route -
+the index route.
+
+Let's do a few things to try out what we just learned:
+
+- Create a new `/ping` route that renders text saying "pong" on the screen.
+- Make a layout route for all pages under the `/pet` route that renders a
+  sidebar on the page. (The CSS classes are under /styles/global.css and are
+  already available on the page using `className`!)
+- BONUS: Setup a route under `/pet` that accepts a pet name as a parameter and
+  renders it in the content section of the layout you made! (Destructuring your
+  param from the `useParms()` hook would be useful here!)
+
+<br />
+
+Next we'll go over how to load data in our routes!

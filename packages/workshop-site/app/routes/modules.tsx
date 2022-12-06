@@ -108,12 +108,12 @@ const sidebarContent = [
         link: '/modules/remix-loaders/defining-a-loader'
       },
       {
-        text: 'Accessing Data in a Route',
-        link: '/modules/remix-loaders/accessing-data-in-a-route'
-      },
-      {
         text: 'Rendering Data',
         link: '/modules/remix-loaders/rendering-data'
+      },
+      {
+        text: 'Loader Benefits',
+        link: '/modules/remix-loaders/loader-benefits'
       },
       {
         text: 'Exercise',

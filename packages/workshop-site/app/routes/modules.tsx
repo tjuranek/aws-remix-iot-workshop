@@ -126,7 +126,7 @@ const sidebarContent = [
     items: [
       {
         text: 'Updating Our Data Model',
-        link: '/modules/remix-actions/updating-out-data-model'
+        link: '/modules/remix-actions/updating-our-data-model'
       },
       {
         text: 'Building a Form',

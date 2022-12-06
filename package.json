@@ -1,11 +1,15 @@
 {
   "name": "aws-remix-iot-workshop",
   "workspaces": [
-    "exercise/data-loading",
-    "exercies/routing",
-    "packages/printster-app",
-    "packages/printster-asset-data",
-    "packages/printster-infrastructure",
+    "answers/creating-a-remix-app-answer",
+    "answers/remix-actions-answer",
+    "answers/remix-loaders-answer",
+    "answers/remix-routes-answer",
+    "exercise/creating-a-remix-app",
+    "exercise/remix-actions",
+    "exercise/remix-loaders",
+    "exercise/remix-routes",
+    "packages/machines-site",
     "packages/workshop-site"
   ],
   "dependencies": {

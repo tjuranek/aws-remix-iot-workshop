@@ -9,7 +9,7 @@
     "db:schema": "npx prisma db push",
     "db:seed": "npx prisma db seed",
     "dev": "npm run db &&  concurrently \"npm run css\" \"remix dev\"",
-    "start": "remix-serve build"
+    "start": "npm run db && remix-serve build"
   },
   "dependencies": {
     "@prisma/client": "^4.7.1",

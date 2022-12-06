@@ -53,6 +53,107 @@ const sidebarContent = [
         link: '/modules/pespas/where-does-remix-fit'
       }
     ]
+  },
+  {
+    heading: 'Creating a Remix App',
+    items: [
+      {
+        text: 'The Remix CLI',
+        link: '/modules/creating-a-remix-app/the-remix-cli'
+      },
+      {
+        text: 'Remix Stacks',
+        link: '/modules/creating-a-remix-app/remix-stacks'
+      },
+      {
+        text: 'Exercise',
+        link: '/modules/creating-a-remix-app/exercise'
+      }
+    ]
+  },
+  {
+    heading: 'Remix Routes',
+    items: [
+      {
+        text: 'Defining a Route',
+        link: '/modules/remix-routes/defining-a-route'
+      },
+      {
+        text: 'Nested Routing',
+        link: '/modules/remix-routes/nested-routing'
+      },
+      {
+        text: 'Route Params',
+        link: '/modules/remix-routes/route-params'
+      },
+      {
+        text: 'Nested Layouts',
+        link: '/modules/remix-routes/nested-layouts'
+      },
+      {
+        text: 'Exercise',
+        link: '/modules/remix-routes/exercise'
+      }
+    ]
+  },
+  {
+    heading: 'Remix Loaders',
+    items: [
+      {
+        text: 'Building a Data Model',
+        link: '/modules/remix-loaders/building-a-data-model'
+      },
+      {
+        text: 'Defining a Loader',
+        link: '/modules/remix-loaders/defining-a-loader'
+      },
+      {
+        text: 'Accessing Data in a Route',
+        link: '/modules/remix-loaders/accessing-data-in-a-route'
+      },
+      {
+        text: 'Rendering Data',
+        link: '/modules/remix-loaders/rendering-data'
+      },
+      {
+        text: 'Exercise',
+        link: '/modules/remix-loaders/exercise'
+      }
+    ]
+  },
+  {
+    heading: 'Remix Actions',
+    items: [
+      {
+        text: 'Updating Our Data Model',
+        link: '/modules/remix-actions/updating-out-data-model'
+      },
+      {
+        text: 'Building a Form',
+        link: '/modules/remix-actions/building-a-form'
+      },
+      {
+        text: 'Defining an Action',
+        link: '/modules/remix-actions/defining-an-action'
+      },
+      {
+        text: 'Exercise',
+        link: '/modules/remix-actions/exercise'
+      }
+    ]
+  },
+  {
+    heading: 'In Review',
+    items: [
+      {
+        text: 'What We Learned',
+        link: '/modules/in-review/what-we-learned'
+      },
+      {
+        text: 'Questions',
+        link: '/modules/in-review/questions'
+      }
+    ]
   }
 ];
 

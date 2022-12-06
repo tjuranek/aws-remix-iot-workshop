@@ -23,6 +23,7 @@ em {
 .button-group {
   display: flex;
   justify-content: space-between;
+  margin-top: 8rem;
 }
 
 button {
@@ -37,4 +38,12 @@ button {
 
 button:hover {
   background-color: var(--color-buy-shadow);
+}
+
+*:not(span) > code {
+  color: var(--color-tertiary);
+  background-color: var(--color-background);
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.125rem;
 }

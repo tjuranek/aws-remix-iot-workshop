@@ -1,7 +1,0 @@
-.DS_Store
-.cache
-.env
-
-build
-node_modules
-public
